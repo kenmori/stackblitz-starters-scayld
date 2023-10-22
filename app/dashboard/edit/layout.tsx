@@ -9,6 +9,8 @@ export default async function EditLayout({
   return (
     <div>
       <h1>EditLayout</h1>
+      {data}
+      <br />
       {children}
     </div>
   );

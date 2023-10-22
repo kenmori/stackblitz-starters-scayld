@@ -1,9 +1,12 @@
-import Image from 'next/image';
+import { fetchData } from '@/app/lib/fetchData';
 
-export default function Dashbord() {
+export const revalidate = 0;
+export default async function Page() {
+  const data = await fetchData();
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-24">
-      Dashbord
+      Dashboard page
+      {data}
     </div>
   );
 }

@@ -1,9 +1,14 @@
-import Image from 'next/image';
+import { fetchData } from '@/app/lib/fetchData';
+export const revalidate = 2;
 
-export default function Page() {
+export default async function Page() {
+  const data = await fetchData(undefined, "?page=1");
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24">
+    <div className="">
+      <div>
       Edit Page
+      </div>
+      <div>{data}</div>
     </div>
   );
 }
